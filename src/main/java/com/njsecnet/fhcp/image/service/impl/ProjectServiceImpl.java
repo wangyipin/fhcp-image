@@ -4,6 +4,8 @@ import com.njsecnet.fhcp.image.constant.HarborRestfulApi;
 import com.njsecnet.fhcp.image.service.ProjectService;
 import com.njsecnet.fhcp.image.util.HttpClient;
 import com.njsecnet.fhcp.image.util.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -12,6 +14,7 @@ import java.util.Map;
 public class ProjectServiceImpl implements ProjectService {
 
 
+    private Logger logger = LoggerFactory.getLogger(ProjectServiceImpl.class);
 
     @Override
     public Map<String,Object> search(String q) {
@@ -48,7 +51,7 @@ public class ProjectServiceImpl implements ProjectService {
             httpurl = httpurl + "&page_size="+pageSize;
         }
 
-        System.err.println("------------------------"+httpurl);
+        logger.info(httpurl);
 
         Map<String,Object> responseMap = HttpClient.doGet(httpurl);
 
