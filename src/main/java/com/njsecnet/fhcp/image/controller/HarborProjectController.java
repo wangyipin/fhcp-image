@@ -111,23 +111,21 @@ public class HarborProjectController {
 		return new ResponseEntity<>(msg, HttpStatus.OK);
 	}
 
-
 	/**
 	 * test get properties
 	 *
 	 * @return ResponseEntity
 	 */
 	@GetMapping(value = "testContextUtil")
-	public ResponseEntity<Object> testContextUtil(){
+	public ResponseEntity<Object> testContextUtil() {
 
-		String username = SpringContextUtils.getBean(ApplicationProperties.class).getUsername();
+		String username = SpringContextUtils.getBean(ApplicationProperties.class).getUserName();
 
 		String password = SpringContextUtils.getBean(ApplicationProperties.class).getPassword();
 
-		logger.info(username+"--------------------"+password);
+		logger.info(username + "--------------------" + password);
 
-		return new ResponseEntity<>("",HttpStatus.OK);
+		return new ResponseEntity<>("", HttpStatus.OK);
 	}
-
 
 }

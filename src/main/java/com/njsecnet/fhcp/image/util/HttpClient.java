@@ -157,7 +157,7 @@ public class HttpClient {
 
         try {
             //设置用户名和密码
-            String user = applicationProperties.getUsername();
+            String user = applicationProperties.getUserName();
 
             String pwd = applicationProperties.getPassword();
 

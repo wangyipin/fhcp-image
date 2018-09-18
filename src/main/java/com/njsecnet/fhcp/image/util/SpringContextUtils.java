@@ -11,7 +11,7 @@ import org.springframework.context.ApplicationContext;
  * @CreateDate: 2018/9/17 14:55
  * @Version: 1.0
  */
-public class SpringContextUtils {
+public final class SpringContextUtils {
 
 	private SpringContextUtils() {
 	}
